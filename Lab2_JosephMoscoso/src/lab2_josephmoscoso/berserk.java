@@ -12,19 +12,76 @@ public class berserk{
     private int velocidad;
     private int critic=30;
     private int suerte=15;
+    private int edad;
+    private String nombre;
+    private int estatura;
+    private int peso;
+    private String color;
+    private String peloc;
     
     public berserk() {
     }
 
-    public berserk(String grito, int hp, int ad, int eficacia, int velocidad, int critic, int suerte) {
+    public berserk(String grito, int velocidad, int edad, String nombre, int estatura, int peso, String color, String peloc) {
         this.grito = grito;
-        this.hp = hp;
-        this.ad = ad;
-        this.eficacia = eficacia;
         this.velocidad = velocidad;
-        this.critic = critic;
-        this.suerte = suerte;
+        this.edad = edad;
+        this.nombre = nombre;
+        this.estatura = estatura;
+        this.peso = peso;
+        this.color = color;
+        this.peloc = peloc;
     }
+    
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEstatura() {
+        return estatura;
+    }
+
+    public void setEstatura(int estatura) {
+        this.estatura = estatura;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getPeloc() {
+        return peloc;
+    }
+
+    public void setPeloc(String peloc) {
+        this.peloc = peloc;
+    }
+    
+    
 
     
 
