@@ -2,6 +2,7 @@ package lab2_josephmoscoso;
 import java.util.*;
 public class Lab2_JosephMoscoso {
 static Scanner sc=new Scanner(System.in);
+static Random r=new Random();
     public static void main(String[] args) {
         char r='s';
         while (r=='s'||r=='S') {
@@ -412,6 +413,18 @@ static Scanner sc=new Scanner(System.in);
         System.out.println("----------------------------------------------");
         System.out.println("Sus atributos finales son: ");
         System.out.println(player);
+        ArrayList<articulos> mochila=new ArrayList();
+        mochila.add(new articulos("Frostmourne", 20, "raro"));
+        mochila.add(new articulos("Talizman", 40, "usual"));
+        mochila.add(new articulos("Corazon de ella", 30, "raro"));
+        mochila.add(new articulos("Logo antiguo", 20, "inusual"));
+        mochila.add(new articulos("Baston de merlín", 50, "raro"));
+        mochila.add(new articulos("poción", 20, "usual"));
+        mochila.add(new articulos("Agi stone", 20, "urual"));
+        mochila.add(new articulos("Bufu stone", 20, "usual"));
+        mochila.add(new articulos("Zio stone", 20, "usual"));
+        mochila.add(new articulos("Megido stone", 20, "usual"));
+        
         
     }
     
