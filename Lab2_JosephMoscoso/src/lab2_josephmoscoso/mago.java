@@ -4,15 +4,15 @@ package lab2_josephmoscoso;
  *
  * @author Joseph
  */
-public class mago{
+public class mago extends psja{
     private String grito;
     private int ap=50;
-    private int hp=120;
+    /*private int hp=120;
     private int ad=20;
     private int eficacia=70;
     private int velocidad=10;
     private int critic=2;
-    private int suerte=20;
+    private int suerte=20;*/
     private int edad;
     private String nombre;
     private int estatura;
@@ -21,9 +21,11 @@ public class mago{
     private String peloc;
     
     public mago() {
+        super();
     }
 
-    public mago(String grito, int edad, String nombre, int estatura, int peso, String color, String peloc) {
+    public mago(String grito, int edad, String nombre, int estatura, int peso, String color, String peloc, int hp, int ad, int eficacia, int velocidad, int critic, int suerte) {
+        super(hp, ad, eficacia, velocidad, critic, suerte);
         this.grito = grito;
         this.edad = edad;
         this.nombre = nombre;
@@ -33,6 +35,13 @@ public class mago{
         this.peloc = peloc;
     }
 
+    public int getAp() {
+        return ap;
+    }
+
+    public void setAp(int ap) {
+        this.ap = ap;
+    }
     
 
     public int getEdad() {
@@ -83,69 +92,17 @@ public class mago{
         this.peloc = peloc;
     }
     
-    public int getHp() {
-        return hp;
-    }
-
-    public void setHp(int hp) {
-        //this.hp = hp;
-        this.hp = hp;
-    }
-
-    public int getAd() {
-        return ad;
-    }
-
-    public void setAd(int ad) {
-        this.ad = ad;
-    }
-
-    public int getEficacia() {
-        return eficacia;
-    }
-
-    public void setEficacia(int eficacia) {
-        this.eficacia = eficacia;
-    }
-
-    public int getVelocidad() {
-        return velocidad;
-    }
-
-    public void setVelocidad(int velocidad) {
-        this.velocidad = velocidad;
-    }
-
-    public int getCritic() {
-        return critic;
-    }
-
-    public void setCritic(int critic) {
-        this.critic = critic;
-    }
-
-    public int getSuerte() {
-        return suerte;
-    }
-
-    public void setSuerte(int suerte) {
-        this.suerte = suerte;
-    }
-    
-    public int getAp() {
-        return ap;
-    }
-
-    public void setAp(int ap) {
-        this.ap = ap;
-    }
-    
     public String getGrito() {
         return grito;
     }
     
     public void setGrito(String grito) {
         this.grito = grito;
+    }
+
+    @Override
+    public String toString() {
+        return "mago{" + "grito=" + grito + ", ap=" + ap + ", edad=" + edad + ", nombre=" + nombre + ", estatura=" + estatura + ", peso=" + peso + ", color=" + color + ", peloc=" + peloc + '}'+ super.toString();
     }
     
 }

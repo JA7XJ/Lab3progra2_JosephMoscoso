@@ -71,5 +71,10 @@ public class psja {
     public void setSuerte(int suerte) {
         this.suerte = suerte;
     }
+
+    @Override
+    public String toString() {
+        return "psja{" + "hp=" + hp + ", ad=" + ad + ", eficacia=" + eficacia + ", velocidad=" + velocidad + ", critic=" + critic + ", suerte=" + suerte + '}';
+    }
     
 }

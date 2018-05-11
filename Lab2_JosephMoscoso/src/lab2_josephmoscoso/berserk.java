@@ -4,14 +4,14 @@ package lab2_josephmoscoso;
  *
  * @author Joseph
  */
-public class berserk{
+public class berserk extends psja{
     private String grito;
-    private int hp=190;
+    /*private int hp=190;
     private int ad=80;
     private int eficacia=80;
     private int velocidad;
     private int critic=30;
-    private int suerte=15;
+    private int suerte=15;*/
     private int edad;
     private String nombre;
     private int estatura;
@@ -20,11 +20,12 @@ public class berserk{
     private String peloc;
     
     public berserk() {
+        super();
     }
 
-    public berserk(String grito, int velocidad, int edad, String nombre, int estatura, int peso, String color, String peloc) {
+    public berserk(String grito, int edad, String nombre, int estatura, int peso, String color, String peloc, int hp, int ad, int eficacia, int velocidad, int critic, int suerte) {
+        super(hp, ad, eficacia, velocidad, critic, suerte);
         this.grito = grito;
-        this.velocidad = velocidad;
         this.edad = edad;
         this.nombre = nombre;
         this.estatura = estatura;
@@ -81,10 +82,6 @@ public class berserk{
         this.peloc = peloc;
     }
     
-    
-
-    
-
     public String getGrito() {
         return grito;
     }
@@ -93,52 +90,11 @@ public class berserk{
         this.grito = grito;
     }
 
-    public int getHp() {
-        return hp;
+    @Override
+    public String toString() {
+        return "berserk{" + "grito=" + grito + ", edad=" + edad + ", nombre=" + nombre + ", estatura=" + estatura + ", peso=" + peso + ", color=" + color + ", peloc=" + peloc + '}'+super.toString();
     }
-
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-
-    public int getAd() {
-        return ad;
-    }
-
-    public void setAd(int ad) {
-        this.ad = ad;
-    }
-
-    public int getEficacia() {
-        return eficacia;
-    }
-
-    public void setEficacia(int eficacia) {
-        this.eficacia = eficacia;
-    }
-
-    public int getVelocidad() {
-        return velocidad;
-    }
-
-    public void setVelocidad(int velocidad) {
-        this.velocidad = velocidad;
-    }
-
-    public int getCritic() {
-        return critic;
-    }
-
-    public void setCritic(int critic) {
-        this.critic = critic;
-    }
-
-    public int getSuerte() {
-        return suerte;
-    }
-
-    public void setSuerte(int suerte) {
-        this.suerte = suerte;
-    }
+    
+    
     
 }
