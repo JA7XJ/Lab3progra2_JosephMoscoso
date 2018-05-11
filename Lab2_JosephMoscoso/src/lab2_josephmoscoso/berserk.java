@@ -4,24 +4,36 @@ package lab2_josephmoscoso;
  *
  * @author Joseph
  */
-public class psja {
-    private int hp;
-    private int ad;
-    private int eficacia;
+public class berserk{
+    private String grito;
+    private int hp=190;
+    private int ad=80;
+    private int eficacia=80;
     private int velocidad;
-    private int critic;
-    private int suerte;
-
-    public psja() {
+    private int critic=30;
+    private int suerte=15;
+    
+    public berserk() {
     }
 
-    public psja(int hp, int ad, int eficacia, int velocidad, int critic, int suerte) {
+    public berserk(String grito, int hp, int ad, int eficacia, int velocidad, int critic, int suerte) {
+        this.grito = grito;
         this.hp = hp;
         this.ad = ad;
         this.eficacia = eficacia;
         this.velocidad = velocidad;
         this.critic = critic;
         this.suerte = suerte;
+    }
+
+    
+
+    public String getGrito() {
+        return grito;
+    }
+
+    public void setGrito(String grito) {
+        this.grito = grito;
     }
 
     public int getHp() {
