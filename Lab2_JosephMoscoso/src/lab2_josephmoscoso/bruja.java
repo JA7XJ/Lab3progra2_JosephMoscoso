@@ -9,13 +9,13 @@ public class bruja extends enemy {
     private int edad;
     private int estatura;
     private int peso;
-    private int name;
+    private String name;
 
     public bruja() {
         super();
     }
 
-    public bruja(int ap, int edad, int estatura, int peso, int name, int hp, int ad, int eficacia, int velocidad, int critic) {
+    public bruja(int ap, int edad, int estatura, int peso, String name, int hp, int ad, int eficacia, int velocidad, int critic) {
         super(hp, ad, eficacia, velocidad, critic);
         this.ap = ap;
         this.edad = edad;
@@ -56,11 +56,11 @@ public class bruja extends enemy {
         this.peso = peso;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 

@@ -8,13 +8,13 @@ public class troll extends enemy{
     private int edad;
     private int estatura;
     private int peso;
-    private int name;
+    private String name;
 
     public troll() {
         super();
     }
 
-    public troll(int edad, int estatura, int peso, int name, int hp, int ad, int eficacia, int velocidad, int critic) {
+    public troll(int edad, int estatura, int peso, String name, int hp, int ad, int eficacia, int velocidad, int critic) {
         super(hp, ad, eficacia, velocidad, critic);
         this.edad = edad;
         this.estatura = estatura;
@@ -46,11 +46,11 @@ public class troll extends enemy{
         this.peso = peso;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 

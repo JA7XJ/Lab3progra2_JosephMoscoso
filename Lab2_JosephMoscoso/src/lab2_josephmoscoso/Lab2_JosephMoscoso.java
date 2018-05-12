@@ -2,9 +2,11 @@ package lab2_josephmoscoso;
 import java.util.*;
 public class Lab2_JosephMoscoso {
 static Scanner sc=new Scanner(System.in);
-static Random r=new Random();
+static Random x=new Random();
     public static void main(String[] args) {
         char r='s';
+        int lim=5;
+        int lim2=50;
         while (r=='s'||r=='S') {
             System.out.println("Bienvenido al videojuego Dev & Dungeon");
             System.out.println("----------------------------------------------");
@@ -14,10 +16,30 @@ static Random r=new Random();
             int op=sc.nextInt();
             System.out.println("----------------------------------------------");
             if (op==1) {
-                game();
+                game(lim, lim2);
             }
             if (op==2) {
-                
+                System.out.println("¿Que nivel de dificultad desea?");
+                System.out.println("----------------------------------------------");
+                System.out.println("1)facil\n2)normal\n3)dificil");
+                System.out.println("----------------------------------------------");
+                System.out.print("Ingrese su opcion: ");
+                int op2=sc.nextInt();
+                if (op2==1) {
+                    lim=5;
+                    lim2=50;
+                }
+                if (op2==2) {
+                    lim=10;
+                    lim2=100;
+                }
+                if (op2==3) {
+                    lim=15;
+                    lim2=150;
+                }
+                if (op2==4) {
+                    System.out.println("Error, opcion incorrecta");
+                }
             }
             if (op==3) {
                 break;
@@ -26,11 +48,11 @@ static Random r=new Random();
                 System.out.println("Error, esta opcion no existe");
             }
             System.out.println("----------------------------------------------");
-            System.out.print("¿Desea volver a iniciar?[S/N]: ");
+            System.out.print("¿Desea volver escoger otra opcion?[S/N]: ");
             r=sc.next().charAt(0);
         }
     }
-    public static void game(){
+    public static void game(int lim, int lim2){
         char r='s';
         ArrayList player=new ArrayList();
         ArrayList<mago> p=new ArrayList();
@@ -414,6 +436,7 @@ static Random r=new Random();
         System.out.println("Sus atributos finales son: ");
         System.out.println(player);
         ArrayList<articulos> mochila=new ArrayList();
+        ArrayList enemigos=new ArrayList();
         mochila.add(new articulos("Frostmourne", 20, "raro"));
         mochila.add(new articulos("Talizman", 40, "usual"));
         mochila.add(new articulos("Corazon de ella", 30, "raro"));
@@ -424,8 +447,97 @@ static Random r=new Random();
         mochila.add(new articulos("Bufu stone", 20, "usual"));
         mochila.add(new articulos("Zio stone", 20, "usual"));
         mochila.add(new articulos("Megido stone", 20, "usual"));
-        
-        
+        for (int i = 0; i < lim; i++) {
+            int rand=1+x.nextInt(4);
+            if (rand==1) {
+                int rand2=60+x.nextInt(80);
+                int ap=20+x.nextInt(40);
+                int ad=5+x.nextInt(10);
+                int eficacia=10+x.nextInt(30);
+                int velocidad=3+x.nextInt(7);
+                enemigos.add(new bruja(ap, 200, 2, 50, "Bruja",rand2, ad,eficacia, velocidad, 1));
+            }
+            if (rand==2) {
+                int hp=50+x.nextInt(80);
+                int crit=15+x.nextInt(20);
+                int ad=30+x.nextInt(50);
+                int eficacia=50+x.nextInt(65);
+                int velocidad=10;
+                enemigos.add(new troll(50, 2, 80, "Troll", hp, ad, eficacia, velocidad, crit));
+            }
+            if (rand==3) {
+                int hp=70+x.nextInt(90);
+                int crit=60;
+                int ad=30+x.nextInt(45);
+                int eficacia=20+x.nextInt(50);
+                int velocidad=20;
+                enemigos.add(new orco(20, 30, 50, "Orco", hp, ad, eficacia, velocidad, crit ));
+            }
+            if (rand==4) {
+                int hp=60+x.nextInt(120);
+                int crit=0+x.nextInt(100);
+                int ad=30+x.nextInt(50);
+                int eficacia=50+x.nextInt(70);
+                int velocidad=20;
+                enemigos.add(new elfon(24, 2, 70, "Elfo Oscuro", hp, ad, eficacia, velocidad, crit));
+            }
+        }
+        ArrayList moch=new ArrayList();
+        int limj=lim2;
+        int c=0;
+        while (limj>=0) {
+            System.out.println("Se tira dado");
+            int dado=1+x.nextInt(20);
+            System.out.println("Salio "+dado);
+            System.out.println("avanzo "+dado+" pasos");
+            int suer=1+x.nextInt(100);
+            int mm=1+x.nextInt(9);
+            /*if (player.get(0) instanceof mago) {
+                if (suer<p.get(0).getSuerte()) {
+                    p.get(0).setAp(p.get(0).getAp()+mochila.get(mm).getBono());
+                }
+            }
+            if (player.get(0) instanceof berserk) {
+                if (suer<p2.get(0).getSuerte()) {
+                    p2.get(0).setAd(p2.get(0).getAd()+mochila.get(mm).getBono());
+                }
+            }
+            if (player.get(0) instanceof arquero) {
+                if (suer<p3.get(0).getSuerte()) {
+                    p3.get(0).setAd(p3.get(0).getAd()+mochila.get(mm).getBono());
+                }
+            }
+            if (player.get(0) instanceof picaro) {
+                if (suer<p4.get(0).getSuerte()) {
+                    p4.get(0).setAd(p4.get(0).getAd()+mochila.get(mm).getBono());
+                }
+            }*/
+            /*if (suer<95||suer>=100) {
+                if (player.get(0) instanceof mago) {
+                    if (suer>p.get(0).getSuerte()&&suer<95) {
+                        while (p.get(0).getHp()!=0) {
+                            if (enemigos.get(c) instanceof bruja) {
+
+                            }
+                            if (enemigos.get(c) instanceof troll) {
+                                
+                            }
+                            if (enemigos.get(c) instanceof orco) {
+                                
+                            }
+                            if (enemigos.get(c) instanceof elfon) {
+                                
+                            }
+                        }
+                    }
+                }
+                limj=limj-dado;
+            }*/
+            limj=limj-dado;
+            System.out.println("Quedan "+limj+" casillas");
+        }
+        System.out.println("----------------------------------------------");
+        System.out.println("Usted gano");
     }
     
 }
